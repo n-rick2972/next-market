@@ -1,3 +1,4 @@
+import auth from "../../../../utils/auth";
 import connectDB from "../../../../utils/database";
 import { ItemModel } from "../../../../utils/schemaModels";
 
@@ -11,4 +12,4 @@ const deleteItem = async (req, res) => {
   }
 };
 
-export default deleteItem;
+export default auth(deleteItem);

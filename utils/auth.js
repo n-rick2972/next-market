@@ -15,7 +15,7 @@ const auth = (handler) => {
     }
     try {
       const decoded = jwt.verify(token, secret_key);
-      console.log(decoded);
+      req.body.email = decoded.email;
       return handler(req, res);
     } catch (err) {
       return res

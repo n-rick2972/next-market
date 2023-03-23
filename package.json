@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "13.2.4",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^7.0.2",
     "next": "13.2.4",

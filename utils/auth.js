@@ -8,7 +8,7 @@ const auth = (handler) => {
       return handler(req, res);
     }
     const token =
-      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZW1haWwub2NtIiwiaWF0IjoxNjc5NTU2MzE5LCJleHAiOjE2Nzk2MzkxMTl9.gNVuzTMVB3__rsbOuhfRVmn9g19jg1CYYTDwU4RVLeA";
+      "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhlbGxvQG1vbm90ZWluLmNvbSIsImlhdCI6MTY3OTYzMzc5OSwiZXhwIjoxNjc5NzE2NTk5fQ.A1_i8hEdN7Fl-9t1pOIbtW_i6s5oorjaqf6Z1PCdnQA";
     // const token = await req.handlers.authorization.split("")[1];
     if (!token) {
       return res.status(401).json({ message: "トークンがありません" });

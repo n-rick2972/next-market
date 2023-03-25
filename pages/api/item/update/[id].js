@@ -1,13 +1,12 @@
-import auth from "../../../../utils/auth";
 import connectDB from "../../../../utils/database";
 import { ItemModel } from "../../../../utils/schemaModels";
+import auth from "../../../../utils/auth";
 
 const updateItem = async (req, res) => {
-  console.log(req);
   try {
     await connectDB();
     const singleItem = await ItemModel.findById(req.query.id);
-    if (singleItem.email === req.query.email) {
+    if (singleItem.email === req.body.email) {
       await ItemModel.updateOne({ _id: req.query.id }, req.body);
       return res.status(200).json({ message: "アイテム編集成功" });
     } else {

@@ -29,13 +29,13 @@ const UpdateItem = (props) => {
       const jsonData = await response.json();
       alert(jsonData.message);
     } catch (err) {
-      alert("アイテム修正失敗");
+      alert("アイテム編集失敗");
     }
   };
 
   return (
     <div>
-      <h1>アイテム修正</h1>
+      <h1>アイテム編集</h1>
       <form onSubmit={handleSubmit}>
         <input
           value={title}
@@ -69,7 +69,7 @@ const UpdateItem = (props) => {
           placeholder="商品説明"
           required
         ></textarea>
-        <button>修正</button>
+        <button>編集</button>
       </form>
     </div>
   );

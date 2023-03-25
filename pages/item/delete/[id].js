@@ -1,4 +1,5 @@
 import Image from "next/image";
+import useAuth from "../../../utils/useAuth";
 
 const DeleteItem = (props) => {
   const handleSubmit = async (e) => {
@@ -22,23 +23,29 @@ const DeleteItem = (props) => {
     }
   };
 
-  return (
-    <div>
-      <h1>アイテム削除</h1>
-      <form onSubmit={handleSubmit}>
-        <h2>{props.singleItem.title}</h2>
-        <Image
-          src={props.singleItem.item}
-          width={750}
-          height={500}
-          alt="item-image"
-        />
-        <h3>${props.singleItem.price}</h3>
-        <p>{props.singleItem.description}</p>
-        <button>削除</button>
-      </form>
-    </div>
-  );
+  const loginUser = useAuth();
+
+  if (loginUser === props.singleItem.email) {
+    return (
+      <div>
+        <h1>アイテム削除</h1>
+        <form onSubmit={handleSubmit}>
+          <h2>{props.singleItem.title}</h2>
+          <Image
+            src={props.singleItem.item}
+            width={750}
+            height={500}
+            alt="item-image"
+          />
+          <h3>${props.singleItem.price}</h3>
+          <p>{props.singleItem.description}</p>
+          <button>削除</button>
+        </form>
+      </div>
+    );
+  } else {
+    return <h1>権限がありません。</h1>;
+  }
 };
 
 export default DeleteItem;

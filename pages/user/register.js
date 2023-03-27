@@ -9,7 +9,7 @@ const Register = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        "https://next-market-kohl.vercel.app/api/user/register",
+        "https://next-market-qgxv.vercel.app/api/user/register",
         {
           method: "POST",
           headers: {

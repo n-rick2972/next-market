@@ -26,7 +26,10 @@ const Login = () => {
   };
   return (
     <div>
-      <h1>ログイン</h1>
+      <Head>
+        <title>ログイン</title>
+      </Head>
+      <h1 className="page-title">ログイン</h1>
       <form onSubmit={handleSubmit}>
         <input
           value={email}

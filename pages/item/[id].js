@@ -3,7 +3,10 @@ import Link from "next/link";
 
 const ReadSingleItem = (props) => {
   return (
-    <div>
+    <div className="grid-container-si">
+      <Head>
+        <title>{props.singleItem.title}</title>
+      </Head>
       <div>
         <Image
           src={props.singleItem.image}

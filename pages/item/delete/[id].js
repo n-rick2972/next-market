@@ -28,7 +28,10 @@ const DeleteItem = (props) => {
   if (loginUser === props.singleItem.email) {
     return (
       <div>
-        <h1>アイテム削除</h1>
+        <Head>
+          <title>アイテム削除</title>
+        </Head>
+        <h1 className="page-title">アイテム削除</h1>
         <form onSubmit={handleSubmit}>
           <h2>{props.singleItem.title}</h2>
           <Image

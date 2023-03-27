@@ -27,7 +27,10 @@ const Register = () => {
   };
   return (
     <div>
-      <h1>ユーザー登録</h1>
+      <Head>
+        <title>ユーザー登録</title>
+      </Head>
+      <h1 className="page-title">ユーザー登録</h1>
       <form onSubmit={handleSubmit}>
         <input
           value={name}

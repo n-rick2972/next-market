@@ -7,7 +7,7 @@ const DeleteItem = (props) => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `http://localhost:3000/api/item/delete/${props.singleItem._id}`,
+        `https://next-market-qgxv.vercel.app/api/item/delete/${props.singleItem._id}`,
         {
           method: "POST",
           headers: {
@@ -56,7 +56,7 @@ export default DeleteItem;
 
 export const getServerSideProps = async (context) => {
   const response = await fetch(
-    `http://localhost:3000/api/item/${context.query.id}`
+    `https://next-market-qgxv.vercel.app/api/item/${context.query.id}`
   );
   const singleItem = await response.json();
 

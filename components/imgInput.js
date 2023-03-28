@@ -7,7 +7,7 @@ const ImgInput = (props) => {
     try {
       const data = new FormData();
       data.append("file", imageFile);
-      data.append("upload", "lm5v5ted");
+      data.append("upload_preset", "lm5v5ted");
       data.append("cloud_name", "dxn1xs3fq");
       const response = await fetch(
         "https://api.cloudinary.com/v1_1/dxn1xs3fq/image/upload",
@@ -24,7 +24,7 @@ const ImgInput = (props) => {
     <div className="img-input">
       <input
         type="file"
-        onChange={(e) => singleFile(e.target.files[0])}
+        onChange={(e) => setImageFile(e.target.files[0])}
         accept="image/png, image/jpeg"
       />
       <button onClick={handleClick} disabled={!imageFile}>

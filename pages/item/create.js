@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
+import ImgInput from "../../components/imgInput";
 import useAuth from "../../utils/useAuth";
 
 const CreateItem = () => {
@@ -11,23 +12,20 @@ const CreateItem = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch(
-        "https://next-market-qgxv.vercel.app/api/item/create",
-        {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-          body: JSON.stringify({
-            title: title,
-            price: price,
-            image: image,
-            description: description,
-          }),
-        }
-      );
+      const response = await fetch("http://localhost:3000/api/item/create", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("token")}`,
+        },
+        body: JSON.stringify({
+          title: title,
+          price: price,
+          image: image,
+          description: description,
+        }),
+      });
       const jsonData = await response.json();
       alert(jsonData.message);
     } catch (err) {
@@ -44,6 +42,7 @@ const CreateItem = () => {
           <title>アイテム作成</title>
         </Head>
         <h1 className="page-title">アイテム作成</h1>
+        <ImgInput setImage={setImage} />
         <form onSubmit={handleSubmit}>
           <input
             value={title}

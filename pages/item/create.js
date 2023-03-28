@@ -1,5 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
+import ImgInput from "../../components/imgInput";
 import useAuth from "../../utils/useAuth";
 
 const CreateItem = () => {
@@ -41,6 +42,7 @@ const CreateItem = () => {
           <title>アイテム作成</title>
         </Head>
         <h1 className="page-title">アイテム作成</h1>
+        <ImgInput setImage={setImage} />
         <form onSubmit={handleSubmit}>
           <input
             value={title}
